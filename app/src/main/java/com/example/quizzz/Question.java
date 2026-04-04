@@ -1,6 +1,8 @@
 package com.example.quizzz;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     private final String textQuestion;
     private final String correctAnswer;
     private final String[] allAnswer;
