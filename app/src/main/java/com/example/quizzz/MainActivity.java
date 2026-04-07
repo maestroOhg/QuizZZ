@@ -1,6 +1,7 @@
 package com.example.quizzz;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("QuizDebug", "✅ Клик по теме! Позиция: " + position);
                 Topic selectedTopic = topics.get(position);
                 Intent intent = new Intent(MainActivity.this, QuizActivity.class);
                 intent.putExtra("TOPIC_TITLE", selectedTopic.getTitle());

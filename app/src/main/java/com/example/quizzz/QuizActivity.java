@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
-    ListView listView;
     private TopicAdapter adapter;
-    private String titleQuestion;
+    private String titleQuestions;
     private List<Question> questions;
-
+    private int numberQuestion = 0;
+    private int numCorrectAnswer = 0;
+    private TextView titleQuiz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +34,13 @@ public class QuizActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        this.titleQuestion = getIntent().getStringExtra("TOPIC_TITLE");
-        this.titleQuestion = (this.titleQuestion == null) ? "Заголовка нет" : this.titleQuestion;
-        {
-            if ((List<Question>) getIntent().getSerializableExtra("QUESTIONS_LIST") == null) this.questions = new ArrayList<Question>();
-            else{
-                this.questions = (List<Question>) getIntent().getSerializableExtra("QUESTIONS_LIST");
-        }
+        this.titleQuestions = getIntent().getStringExtra("TOPIC_TITLE");
+        this.titleQuestions = (this.titleQuestions == null) ? "Заголовка нет" : this.titleQuestions;
+        this.questions = (List<Question>) getIntent().getSerializableExtra("QUESTIONS_LIST");
+        this.questions = (this.questions == null) ? new ArrayList<Question>() : this.questions;
+
+        titleQuiz = findViewById(R.id.titleQuiz);
+        titleQuiz.setText(titleQuestions);
 //        // 5. Обрабатываем клик по элементу списка
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
