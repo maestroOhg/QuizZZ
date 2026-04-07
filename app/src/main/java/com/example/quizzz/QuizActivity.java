@@ -24,6 +24,7 @@ public class QuizActivity extends AppCompatActivity {
     private int numberQuestion = 0;
     private int numCorrectAnswer = 0;
     private TextView titleQuiz;
+    private TextView textQuestion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,12 @@ public class QuizActivity extends AppCompatActivity {
 
         titleQuiz = findViewById(R.id.titleQuiz);
         titleQuiz.setText(titleQuestions);
+        showQuestion();
+//        while (true){
+//            if (numberQuestion<questions.size()){
+//            showQuestion();
+//            }
+//        }
 //        // 5. Обрабатываем клик по элементу списка
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -56,5 +63,12 @@ public class QuizActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
+    }
+    private void showQuestion(){
+        textQuestion = findViewById(R.id.textQuestion);
+        textQuestion.setText(this.questions.get(numberQuestion).getTextQuestion()+"?");
+    }
+    public void showResult(){
+
     }
 }

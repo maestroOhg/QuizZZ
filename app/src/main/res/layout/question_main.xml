@@ -10,8 +10,8 @@
     <TextView
         android:id="@+id/titleQuiz"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:layout_height="100dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center"
         android:padding="10dp"
@@ -21,4 +21,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:padding="40dp"
+        android:textColor="@color/turquoise_dark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/titleQuiz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <RadioGroup
+        android:id="@+id/answerGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/textQuestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <RadioButton
+            android:id="@+id/answer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Вариант 1"
+            android:textColor="@color/turquoise_dark"
+            />
+        <RadioButton
+            android:id="@+id/answer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/turquoise_dark"
+            android:text="Вариант 2"/>
+        <RadioButton
+            android:id="@+id/answer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/turquoise_dark"
+            android:text="Вариант 1" />
+        <RadioButton
+            android:id="@+id/answer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/turquoise_dark"
+            android:text="Вариант 1" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
